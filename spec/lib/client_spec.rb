@@ -9,7 +9,7 @@ describe PunkAPI::Client do
 
   describe '#beer' do
     it 'given an id, returns a PunkAPI::Entity object' do
-      beer = client.beer(id: 1)
+      beer = client.beer(1)
       expect(beer).to be_a PunkAPI::Entity
       expect(beer.name).to eq('Buzz')
     end

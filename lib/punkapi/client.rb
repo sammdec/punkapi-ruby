@@ -12,7 +12,7 @@ module PunkAPI
     end
 
     def beer(id)
-      request('beers', id)
+      request('beers', id: id)
     end
 
     def beers(params = {})
