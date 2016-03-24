@@ -1,28 +1,35 @@
-# Punkapi::Ruby
+# punkapi [![Build Status](https://travis-ci.org/samjbmason/punkapi-ruby.svg?branch=master)](https://travis-ci.org/samjbmason/punkapi-ruby)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/punkapi/ruby`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A ruby wrapper for the PunkAPI, an API that takes Brewdog's DIY Dog and makes it into a JSON API. Read more about it [here](https://github.com/samjbmason/punkapi)
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'punkapi-ruby'
+gem 'punkapi', '~> 1.0.0'
 ```
-
-And then execute:
-
-    $ bundle
 
 Or install it yourself as:
 
-    $ gem install punkapi-ruby
+```
+$ gem install punkapi-ruby
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+### Initialize
+
+```ruby
+client = PunkAPI::Client.new(API_KEY)
+```
+
+### Get a Beer
+```ruby
+client.beer(1)
+
+=> # <PunkAPI::Entity {"balance"=>642, "currency"=>"GBP", "spend_today"=>0}>}
+```
 
 ## Development
 
@@ -38,4 +45,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-

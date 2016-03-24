@@ -12,7 +12,7 @@ module PunkAPI
     end
 
     def beer(id)
-      request('beers', id: id)
+      request('beers', id)
     end
 
     def beers(params = {})
@@ -30,7 +30,7 @@ module PunkAPI
     end
 
     def parse(res)
-      response = JSON.parse(res.body, object_class: OpenStruct)
+      response = JSON.parse(res.body, object_class: PunkAPI::Entity)
       response.code = res.status unless res.success?
       response
     end

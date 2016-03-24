@@ -1,2 +1,4 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'punkapi/ruby'
+require 'dotenv'
+Dotenv.load
+require 'punkapi'
