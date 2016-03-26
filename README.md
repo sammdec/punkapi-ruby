@@ -13,7 +13,7 @@ gem 'punkapi', '~> 1.0.0'
 Or install it yourself as:
 
 ```
-$ gem install punkapi-ruby
+$ gem install punkapi
 ```
 
 ## Usage
