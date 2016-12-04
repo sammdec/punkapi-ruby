@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe PunkAPI::Client do
-  let(:client) { PunkAPI::Client.new(ENV['API_KEY']) }
+  let(:client) { PunkAPI::Client.new }
 
   it 'has a version number' do
     expect(PunkAPI::VERSION).not_to be nil

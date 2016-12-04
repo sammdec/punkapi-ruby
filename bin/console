@@ -1,11 +1,9 @@
 #!/usr/bin/env ruby
 
 require 'bundler/setup'
-require 'dotenv'
-Dotenv.load
 require 'punkapi'
 
-@client = PunkAPI::Client.new(ENV['API_KEY'])
+@client = PunkAPI::Client.new
 
 require 'irb'
 IRB.start
