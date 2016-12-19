@@ -3,16 +3,14 @@ require 'json'
 
 module PunkAPI
   class Client
-    attr_reader :api_key
+    DEFAULT_API_URL = 'https://api.punkapi.com/v2'.freeze
 
-    DEFAULT_API_URL = 'https://punkapi.com/api/v1'
-
-    def initialize(api_key)
-      @api_key = api_key
+    def initialize
     end
 
     def beer(id)
-      request('beers', id: id)
+      beer = request('beers', id: id)
+      beer[0]
     end
 
     def beers(params = {})
@@ -20,7 +18,8 @@ module PunkAPI
     end
 
     def random_beer
-      request('beers/random')
+      beer = request('beers/random')
+      beer[0]
     end
 
     def request(url, params = {})
@@ -37,7 +36,6 @@ module PunkAPI
 
     def connection
       @connection ||= Faraday.new(DEFAULT_API_URL, ssl: { verify: false })
-      @connection.basic_auth(@api_key, '')
       @connection
     end
   end

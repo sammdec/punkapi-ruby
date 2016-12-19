@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe PunkAPI::Client do
-  let(:client) { PunkAPI::Client.new(ENV['API_KEY']) }
+  let(:client) { PunkAPI::Client.new }
 
   it 'has a version number' do
     expect(PunkAPI::VERSION).not_to be nil
@@ -10,6 +10,7 @@ describe PunkAPI::Client do
   describe '#beer' do
     it 'given an id, returns a PunkAPI::Entity object' do
       beer = client.beer(1)
+      puts beer
       expect(beer).to be_a PunkAPI::Entity
       expect(beer.name).to eq('Buzz')
     end
@@ -26,6 +27,7 @@ describe PunkAPI::Client do
   describe '#beers' do
     it 'returns a PunkAPI::Entity object with an abv greater than 10' do
       beers = client.beers(abv_gt: 10)
+      puts beers
       expect(beers[0]).to be_a PunkAPI::Entity
       expect(beers[0].abv).to be > 10
     end
@@ -40,14 +42,6 @@ describe PunkAPI::Client do
       beers = client.beers
       expect(beers[0]).to be_a PunkAPI::Entity
       expect(beers.count).to eq(25)
-    end
-
-    context 'incorrect api_key' do
-      it 'returns an error status of 401' do
-        client = PunkAPI::Client.new('fake')
-        resp = client.beers
-        expect(resp.code).to eq(401)
-      end
     end
   end
 end

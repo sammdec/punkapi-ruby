@@ -7,7 +7,7 @@ A ruby wrapper for the PunkAPI, an API that takes Brewdog's DIY Dog and makes it
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'punkapi', '~> 1.0.0'
+gem 'punkapi', '~> 2.0.0'
 ```
 
 Or install it yourself as:
@@ -21,7 +21,7 @@ $ gem install punkapi
 ### Initialize
 
 ```ruby
-client = PunkAPI::Client.new(API_KEY)
+client = PunkAPI::Client.new
 ```
 
 ### Get a Beer
