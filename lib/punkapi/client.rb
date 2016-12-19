@@ -9,7 +9,8 @@ module PunkAPI
     end
 
     def beer(id)
-      request('beers', id: id)
+      beer = request('beers', id: id)
+      beer[0]
     end
 
     def beers(params = {})
@@ -17,7 +18,8 @@ module PunkAPI
     end
 
     def random_beer
-      request('beers/random')
+      beer = request('beers/random')
+      beer[0]
     end
 
     def request(url, params = {})
