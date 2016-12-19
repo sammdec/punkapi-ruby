@@ -3,7 +3,7 @@ require 'json'
 
 module PunkAPI
   class Client
-    DEFAULT_API_URL = 'https://api.punkapi.com'
+    DEFAULT_API_URL = 'https://api.punkapi.com/v2'
 
     def initialize
     end
